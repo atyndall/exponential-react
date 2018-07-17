@@ -47,7 +47,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="title">Exponential growth</h1>
-        <p className="question">How much will {dollars} become if you let it grow by {percent}% per year for {years} years?</p>
+        <p className="question">How much will ${dollars} become if you let it grow by {percent}% per year for {years} years?</p>
         <div className="answer">
           <div className="text-input">
             Answer: $<input type="text" id="text-input" name="lname" value={answer.format('0,0')} onChange={this.handleChange} /><br/>

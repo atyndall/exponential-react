@@ -21,7 +21,7 @@ const Indicator = (props) => {
   }
 
   return (
-    <p id="indicator" style={{color: color}}>{status}, the answer is {formattedAnswer}</p>
+    <p id="indicator" style={{color: color}}>{status}, the answer is ${formattedAnswer}</p>
   );
 }
 

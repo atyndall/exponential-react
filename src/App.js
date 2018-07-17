@@ -16,7 +16,7 @@ const generateRandomBlankState = () => ({
   percent: _.sample(PERCENTAGES),
   years: _.sample(YEARS),
   submitted: false,
-  answer: '',
+  answer: numeral(0),
 });
 
 class App extends Component {
@@ -39,12 +39,12 @@ class App extends Component {
   }
 
   handleChange(event) {
-    this.setState({answer: numeral(event.target.value).format('0,0')});
+    this.setState({answer: numeral(event.target.value), submitted: false});
   }
 
   render() {
     const {dollars, percent, years, answer, submitted} = this.state;
-    const answerNumber = parseInt(this.state.answer, 10);
+    const answerNumber = answer.value();
 
     return (
       <div className="App">
@@ -52,7 +52,7 @@ class App extends Component {
         <p className="question">How much will {dollars} become if you let it grow by {percent}% per year for {years} years?</p>
         <div className="answer">
           <div className="text-input">
-            Answer: $<input type="text" id="text-input" name="lname" value={answer} onChange={this.handleChange} /><br/>
+            Answer: $<input type="text" id="text-input" name="lname" value={answer.format('0,0')} onChange={this.handleChange} /><br/>
           </div>
           <button type="submit" id="enter-button" onClick={this.handleTry} disabled={isNaN(answerNumber)}>Try</button>
           <button type="button" id="reset-button" onClick={this.handleReset}>Reset</button>

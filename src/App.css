@@ -1,0 +1,285 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #fade29;
+}
+
+/* Scrolling stuff */
+#sections {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  top: 0px;
+  z-index: 90;
+}
+
+.step {
+  margin-bottom: 200px;
+}
+
+.navigation-bar {
+
+}
+
+#logo-img {
+  margin: auto 0 auto 0;
+  color: white;
+  text-align: center;
+  padding: 7px 7px;
+  text-decoration: none;
+}
+#logo-img:hover {
+    background-color: #343434;
+    cursor: pointer;
+
+}
+
+#home-button {
+  text-align: center;
+  display: inline-block;
+
+  width:90px;
+  height: 100%;
+  border-style: solid;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #eace19;
+    height: 50px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 11px 20px;
+    text-decoration: none;
+    border-color: black;
+    border-width: 0 1px 0 1px;
+    font-size: 24px;
+}
+
+li a:hover {
+    background-color: #343434;
+}
+
+li a:active {
+  background-color: #343434;
+  box-shadow: 0px 0px #101010;
+  transform: translateY(2px);
+  padding-top:13px;
+}
+.title {
+  font-size: 50px;
+  text-align: left;
+}
+
+.question {
+  font-size: 40px;
+  text-align: left;
+}
+
+.text-input {
+  font-size: 40px;
+  text-align: left;
+  display: inline-block;
+}
+.answer {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+}
+
+#text-input {
+  background-color: #eace19;
+  height: 40px;
+  font-size: 40px;
+  border: none;
+  border-bottom-color: black;
+  border-bottom-width: 2px;
+  border-bottom-style: inset;
+
+}
+
+#text-input:focus, textarea:focus, input:focus{
+    outline: none;
+    background-color: #fade29;
+
+}
+
+button {
+  background-color: #fade29;
+  border-color: black;
+  font-size: 40px;
+  outline: none;
+  box-shadow: 2px 2px #101010;
+}
+
+button:hover {
+  background-color: #eace19;
+}
+
+button:active {
+  background-color: #eace19;
+  box-shadow: 0px 0px #101010;
+  transform: translateY(2px);
+  transform: translateX(2px);
+}
+
+#indicator {
+    font-size: 40px;
+}
+
+#vis {
+  display: inline-block;
+  position: fixed;
+  top: 60px;
+  z-index: 1;
+  margin-left: 0;
+
+  height: 600px;
+  width: 600px;
+  background-color: #ddd;
+}
+
+/* Content */
+.numbers {
+  fill:black;
+  overflow: visible;
+}
+#content {
+    display: block;
+    max-width: 920px;
+    margin:0 auto;
+}
+
+
+.text {
+    max-width: 920px;
+
+}
+.chart {
+  max-width: 920px;
+  text-align:center;
+}
+
+.container {
+  max-width: 920px;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  display:block;
+  /*background: #fff;*/
+  padding: 30px;
+}
+
+/* Checkboxes */
+h1 {
+  font-size: 50px;
+  margin-top: 0;
+}
+
+
+.control-group {
+  display: inline-block;
+  vertical-align: top;
+  text-align:left;
+  max-width:48%;
+  min-width:350px;
+  margin:0 auto;
+}
+.control {
+  display: block;
+  position: relative;
+  padding-left:30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+ }
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background:#fcf2b5;
+}
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked ~ .control__indicator {
+  background: #fade29;
+}
+
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.control--checkbox .control__indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 3px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
+
+/* Slider */
+.slider {
+  display:block;
+  margin:auto;
+
+}
+
+.ticks {
+  font: 12px sans-serif;
+}
+
+.track,
+.track-inset,
+.track-overlay {
+  stroke-linecap: round;
+}
+
+.track {
+  stroke: #000;
+  stroke-opacity: 0.3;
+  stroke-width: 10px;
+}
+
+.track-inset {
+  stroke: #ddd;
+  stroke-width: 8px;
+}
+
+.track-overlay {
+  pointer-events: stroke;
+  stroke-width: 50px;
+  cursor: crosshair;
+}
+
+.handle {
+  fill: #fff;
+  stroke: #000;
+  stroke-opacity: 0.5;
+  stroke-width: 1.25px;
+}
